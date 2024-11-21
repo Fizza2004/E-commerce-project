@@ -10,9 +10,11 @@ import Basket from "./Pages/Basket";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { CardProvider } from "./components/CardContext";
 
+
 function App() {
   return (
-    <Router> {/* Wrap the app with Router */}
+    <CardProvider>
+      <Router> {/* Wrap the app with Router */}
       <div className="w-full">
         <CardProvider><Header/></CardProvider> {/* Header uses Link, so Router must wrap it */}
         <Routes>
@@ -22,11 +24,12 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/cart" element={<Basket />} /> {/* Add Cart route */}
+          <Route path="/bucket" element={<Basket />} /> {/* Add Cart route */}
         </Routes>
         <Footer />
       </div>
     </Router>
+    </CardProvider>
   );
 }
 

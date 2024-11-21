@@ -30,7 +30,7 @@ export function Header() {
             <FontAwesomeIcon icon={faUser} className="mr-2 text-lg" />
             Register
           </Link>
-          <Link to="/cart" className="border border-black px-4 py-1.5 rounded flex items-center hover:bg-gray-100">
+          <Link to="/bucket" className="border border-black px-4 py-1.5 rounded flex items-center hover:bg-gray-100">
             <FontAwesomeIcon icon={faShoppingCart} className="mr-2 text-lg" />
             Cart ${totalCount}
           </Link>
