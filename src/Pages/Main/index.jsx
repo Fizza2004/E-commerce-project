@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Products from "../../components/Products";
-
+import { CardContext } from "../../components/CardContext";
 
 export function Main() {
+
   return (
     <main className="relative w-full">
       <div className="relative w-full">

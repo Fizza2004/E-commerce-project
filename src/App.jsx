@@ -8,12 +8,13 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Basket from "./Pages/Basket";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { CardProvider } from "./components/CardContext";
 
 function App() {
   return (
     <Router> {/* Wrap the app with Router */}
       <div className="w-full">
-        <Header /> {/* Header uses Link, so Router must wrap it */}
+        <CardProvider><Header/></CardProvider> {/* Header uses Link, so Router must wrap it */}
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/products" element={<Products />} />

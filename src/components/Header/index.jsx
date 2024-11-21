@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignInAlt, faUser, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
+import { CardContext } from "../CardContext";
 
 export function Header() {
+  const {totalCount} = useContext(CardContext);
   return (
     <header className="bg-yellow-100 w-full fixed z-1">
       <nav className="max-w-screen-xl mx-auto flex justify-between items-center h-16 px-4">
@@ -30,7 +32,7 @@ export function Header() {
           </Link>
           <Link to="/cart" className="border border-black px-4 py-1.5 rounded flex items-center hover:bg-gray-100">
             <FontAwesomeIcon icon={faShoppingCart} className="mr-2 text-lg" />
-            Cart (0)
+            Cart ${totalCount}
           </Link>
         </div>
       </nav>
